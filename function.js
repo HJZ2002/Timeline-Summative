@@ -5,7 +5,7 @@
   const navLinks = document.querySelectorAll('.nav a[href^="#"]');
   const sections = [...document.querySelectorAll('main section[id]')];
 
-  // Enable reveal system (CSS listens for this)
+  // Enable reveal system 
   document.documentElement.classList.add('reveal-ready');
 
   // Grow the timeline center line when visible
@@ -38,7 +38,7 @@
     revealObs.observe(el);
   });
 
-  // Smooth scroll (native is fine; this adds focus after click)
+  // Smooth scroll for focus action
   navLinks.forEach((a) => {
     a.addEventListener('click', (e) => {
       const id = a.getAttribute('href');
@@ -50,7 +50,7 @@
     });
   });
 
-  // Scroll-spy: highlight active nav link
+  // Scroll-spy: highlight nav link
   const spy = () => {
     const y = window.scrollY + window.innerHeight * 0.35;
     let current = sections[0]?.id || '';
@@ -68,3 +68,4 @@
   window.addEventListener('resize', spy);
   spy(); // initial
 })();
+
